@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+.sidebar {
+    min-height: 100vh;
+    display: inline-flex;
+    flex-direction: column;
+    background-color: #f0f4f9;
+    justify-content: space-between;
+    padding: 25px 15px;
+}
+.sidebar img {
+    width: 20px;
+   
+}
+.sidebar p {
+    height: 20px;
+
+}
