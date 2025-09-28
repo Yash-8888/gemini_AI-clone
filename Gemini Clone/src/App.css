@@ -21,3 +21,13 @@
     margin-left: 10px;
     cursor: pointer;
 }
+.new{
+    padding: 10px 15px;
+    display: inline-flex;
+    font-size: 14px ;
+    align-items: center;
+    background-color: #E6EAF1;
+    border-radius: 50px;
+    color: rgb(115, 115, 115);
+    cursor: pointer;
+}
