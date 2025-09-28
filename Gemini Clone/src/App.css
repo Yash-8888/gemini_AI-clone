@@ -10,7 +10,6 @@
 }
 .sidebar img {
     width: 20px;
-   margin-right: 5px;
 }
 .sidebar p {
     height: 20px;
@@ -31,3 +30,5 @@
     color: rgb(115, 115, 115);
     cursor: pointer;
 }
+
+

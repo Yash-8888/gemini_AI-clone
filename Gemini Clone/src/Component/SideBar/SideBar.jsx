@@ -13,7 +13,7 @@ const SideBar = () => {
             </div>
             <div className="gap-8  flex flex-col">
                 <div className="new ">
-                <img className='p-10' src={assets.plus_icon} alt="" />
+                <img className='mr-0' src={assets.plus_icon} alt="" />
                 {expand ? <p>New Chat</p> : null}
             </div>
             {expand ?
