@@ -10,9 +10,14 @@
 }
 .sidebar img {
     width: 20px;
-   
+   margin-right: 5px;
 }
 .sidebar p {
     height: 20px;
 
+}
+.meun{
+    display: block;
+    margin-left: 10px;
+    cursor: pointer;
 }
