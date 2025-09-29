@@ -1,6 +1,6 @@
 /*Main*/
 .Main{
-    display: flex 1;
+    flex: 1;
     min-height: 100vh;
     padding-bottom: 10vh;
     position: relative;
@@ -11,5 +11,4 @@
     align-items: center;
     font-size: 22px;
     padding: 20px;
-    gap: 152vh;
 }

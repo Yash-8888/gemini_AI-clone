@@ -5,7 +5,3 @@
   box-sizing: border-box;
   font-family: outfit;
 }
-#root{
-  display: flex;
-  width: 100%;
-}

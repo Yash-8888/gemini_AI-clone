@@ -7,12 +7,10 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-    <SideBar/>
-    <Main/>
-    
-     
-    </>
+    <div className="App-flex">
+      <SideBar/>
+      <Main/>
+    </div>
   )
 }
 
