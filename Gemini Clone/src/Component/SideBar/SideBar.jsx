@@ -17,7 +17,7 @@ const SideBar = () => {
                 {expand ? <p>New Chat</p> : null}
             </div>
             {expand ?
-            <div className="gap-10 flex flex-col items-start">
+            <div className="gap-10 flex flex-col items-start " >
                 <p className='text-[15px] font-semibold'>Recent</p>
                 <div className="text-gray-500 text-[10px] flex items-center items-center cursor-pointer text-[14px]">
                     <img className='text-[10pxs] ' src={assets.message_icon} alt="Chat Icon" />
