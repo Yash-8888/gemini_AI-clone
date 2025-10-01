@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { use } from 'react'
 import { assets } from '../../assets/assets'
 import './Main.css'
 
@@ -35,13 +35,13 @@ const Main = () => {
           <div className="bottem-sbar">
             <div className="search-box">
                 <input className='p-[15px]' type="text" placeholder='Enter a prompt here'/>
-              <div className="search-bar">
-               <img src={assets.gallery_icon} alt="" />
+              <div>
+                <img src={assets.gallery_icon} alt="" />
                 <img src={assets.mic_icon} alt="" />
                 <img src={assets.send_icon} alt="" />
               </div>
             </div>
-            <p>Gemini may display inaccurate info, including about people, so double-check its responses. Your privacy and Gemini Apps</p>
+            <p className=" text-[16px] ">Gemini may display inaccurate info, including about people, so double-check its responses. Your privacy and Gemini Apps</p>
           </div>
         </div>
       </div>

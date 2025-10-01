@@ -57,26 +57,61 @@
 .Hero .card:hover{
     background-color: #dfe4ea;
 }
-.bottem-sbar .search-box{
-    display: flex;
-    background-color: #f0f4f9;
-    justify-content: space-between;
-    padding: 20px 10px;
-    height: 59px;
-    align-items: center;
-    border-radius: 50px;
-}
+
 .bottem-sbar .search-bar{
     display: flex;
     height: 24px;
 }
+
+.bottem-sbar .search-box img{
+    gap: 10px;
+}
+.bottem-sbar{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-width: 900px;
+    padding: 0px 20px;
+    margin: auto;
+}
+.search-box img{
+    width: 24px;
+    cursor: pointer;
+}
+.bottem-sbar p{
+    font-size: 13px;
+    margin: 15px auto;
+    text-align: center;
+    font-weight: 300;
+}
+.bottem-sbar .search-box{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    gap: 20px;
+}
 .search-box input{
-    background-color: #f0f4f9;
+    flex: 1;
+    background-color: transparent;
     padding: 8px;
     width: 100%;
     outline: none;
+    font-size: 18px;
+    border: none;
     
 }
-.bottem-sbar .search-box img{
-    gap: 10px;
+.search-box div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    border-radius: 50px;
+    padding: 10px 20px;
+}
+.search-box{
+    background-color: #f0f4f9;
+    border-radius: 50px;
+    width: 100%;
+    padding: 5px 15px;
 }
