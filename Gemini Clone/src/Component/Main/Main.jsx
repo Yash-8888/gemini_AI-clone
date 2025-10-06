@@ -26,6 +26,7 @@ const Main = () => {
             <div className="card">
               <p className="text-[#585858] text-[17px] ">Brainstorm team bonding activities for our work retreat</p>
               <img src={assets.message_icon} alt="" />
+              hi
             </div>
             <div className="card">
               <p className="text-[#585858] text-[17px] hover-bg-[#dfedae]">Tell me about React js and React native</p>
