@@ -1,0 +1,108 @@
+.Main{
+    flex: 1;
+    min-height: 100vh;
+    padding-bottom: 15vh;
+    position: relative;
+
+}
+.Nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    padding: 20px;
+    color: #585858;
+}
+.Main .Nav img{
+   width: 40px;
+   border-radius: 50%;
+}
+.Main-Container{
+    max-width: 900px;
+    margin: auto;
+}
+.Main .greet{
+    margin: 50px 0px;
+    font-size: 56px;
+    font-weight: 500;
+    color: #c4c7c9;
+    padding: 20px;
+}
+.Main .greet span{
+    background: -webkit-linear-gradient(16deg, #4b90ff, #ff5546);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.Main .cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+.Main .card{
+    height: 200px;
+    padding: 15px;
+    background-color: #f0f4f9;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+}
+.Main .card img{
+    width: 35px;
+    padding: 5px;
+    position: absolute;
+    background: white;
+    border-radius: 20px;
+    bottom: 10px;
+    right: 10px;
+}
+.Main .card p{
+    color: #585858;
+    font-size: 17px;
+}
+.Main .card:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    transition: all 0.4s ease;
+}
+.Main-bottem{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-width: 900px;
+    padding: 0px 20px;
+    margin: auto;
+}
+.search-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #f0f4f9;
+    padding: 10px 20px ;
+    border-radius: 50px;
+}
+.search-box img{
+    width: 24px;
+    cursor: pointer;
+}
+.search-box input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 18px;
+    color: #585858;
+    padding: 8px ;
+}
+.search-box div{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.Main .bottem-info{
+    font-size: 13px;
+    margin: 15px auto;
+    text-align: center;
+    font-weight: 300;
+}

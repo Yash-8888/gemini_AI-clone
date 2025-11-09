@@ -12,12 +12,12 @@
 
 .sidebar .menu{
     display: block;
-    margin: 10px;
+    margin-left: 10px;
     cursor: pointer;
 }
 .sidebar .new-chat{
-    margin-top: 10px;
-    display: flex;
+    margin-top: 50px;
+    display: inline-flex;
     align-items: center;
     gap: 10px;
     padding: 10px 15px;
@@ -37,13 +37,13 @@
 }
 .sidebar .recent-entry{
     display: flex;
-    align-items: center;
+    align-items: start;
     gap: 10px;
     padding: 10px;
-    padding-right: 40px;
+    padding-right: 10px;
     border-radius: 50px;
     color: #282828;
-    cursor: pointer;
+    
 }
 .sidebar .recent-entry:hover{
     background-color: #e6eaf1;
@@ -55,6 +55,4 @@
     
 }
 
-.sidebar .bottom .bottem-entry{
-    display: flex;
-}
+
