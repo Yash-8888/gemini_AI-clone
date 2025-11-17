@@ -19,6 +19,7 @@ const ContextProvider = ({ children }) => {
     }
     
   };
+  onSent("print hello world in js");
   
 
   return (
