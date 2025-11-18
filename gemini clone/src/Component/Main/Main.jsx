@@ -1,8 +1,11 @@
-import React from "react";
+
+import { useContext } from "react";
 import { assets } from "../../assets/assets";
+import { context } from "../../context/context";
 import "./Main.css";
 
 const Main = () => {
+  const {onSent, input, setInput} = useContext(context);
   return (
     <div className="Main">
       <div className="Nav">
@@ -34,7 +37,7 @@ const Main = () => {
         </div>
         <div className="Main-bottem">
           <div className="search-box">
-            <input type="text" placeholder="Enter a prompt here"/>
+            <input onChange={(e)=>setInput(e.target.value)} value={input} type="text" placeholder="Enter a prompt here"/>
             <div>
               <img src={assets.gallery_icon} alt="" />
               <img src={assets.mic_icon} alt="" />
