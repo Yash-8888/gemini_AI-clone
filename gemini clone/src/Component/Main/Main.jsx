@@ -1,11 +1,27 @@
-
-import { useContext } from "react";
+import { runChat } from "../../config/gemini";
+import { useState } from "react";
 import { assets } from "../../assets/assets";
-import { context } from "../../context/context";
+
 import "./Main.css";
 
 const Main = () => {
-  const {onSent, input, setInput} = useContext(context);
+
+  const [prompt, setPrompt] = useState("");
+  const [reply, setReply] = useState("");
+
+  const handleSend = async () => {
+    if (!prompt.trim()) return;
+
+    try {
+      const response = await runChat(prompt);
+      setReply(response);
+      setPrompt(""); // Clear input after sending
+      console.log("AI Reply:", response);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+  
   return (
     <div className="Main">
       <div className="Nav">
@@ -37,11 +53,11 @@ const Main = () => {
         </div>
         <div className="Main-bottem">
           <div className="search-box">
-            <input onChange={(e)=>setInput(e.target.value)} value={input} type="text" placeholder="Enter a prompt here"/>
+            <input value={prompt} onChange={(e) => setPrompt(e.target.value)} onKeyDown={(e) => e.key === "Enter" && handleSend()} type="text" placeholder="Enter a prompt here"/>
             <div>
               <img src={assets.gallery_icon} alt="" />
               <img src={assets.mic_icon} alt="" />
-              <img src={assets.send_icon} alt="" />
+              <img src={assets.send_icon} onClick={handleSend} alt="" />
             </div>
           </div>
           <p className="bottem-info">Gemini may display inaccurate info, including about people, so double-check its responses. Your privacy and Gemini Apps</p>

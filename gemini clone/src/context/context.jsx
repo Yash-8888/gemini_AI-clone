@@ -5,7 +5,7 @@ import { runChat } from "../config/gemini";
 
 export const context = createContext();
 
-const [input, setInput] = useState("");
+
 
 const ContextProvider = ({ children }) => {
 
@@ -23,16 +23,12 @@ const ContextProvider = ({ children }) => {
     
     
   };
-  const contextValue = { 
-      onSent,
-      input,
-      setInput
-  }
+ 
 
   
 
   return (
-    <context.Provider value={{ contextValue }}>
+    <context.Provider value={{ onSent }}>
       {children}
     </context.Provider>
   );
