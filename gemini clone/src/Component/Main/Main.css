@@ -106,3 +106,55 @@
     text-align: center;
     font-weight: 300;
 }
+.result-box {
+  margin: 20px auto;
+  width: 80%;
+  padding: 20px;
+  background: #f7f7f8;
+  border-radius: 10px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.chat-area {
+  padding: 20px 80px;
+  max-height: calc(100vh - 220px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Base bubble style */
+.chat-bubble {
+  max-width: 70%;
+  padding: 16px 18px;
+  border-radius: 18px;
+  font-size: 16px;
+  line-height: 1.5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* User message on right */
+.user-bubble {
+  align-self: flex-end;
+  background: #0b57d0;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+/* AI message on left */
+.ai-bubble {
+  align-self: flex-start;
+  background: #f7f7f8;
+  color: #202124;
+  border-bottom-left-radius: 4px;
+}
+
+/* Optional subtle animation for "thinking" */
+.typing {
+  opacity: 0.8;
+  font-style: italic;
+}
+
