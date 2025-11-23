@@ -106,55 +106,75 @@
     text-align: center;
     font-weight: 300;
 }
-.result-box {
-  margin: 20px auto;
-  width: 80%;
-  padding: 20px;
-  background: #f7f7f8;
-  border-radius: 10px;
-  font-size: 18px;
-  line-height: 1.5;
-  color: #333;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+.result{
+    padding: 0px 5%;
+    max-height: 70vh;
+    overflow-y: scroll;
 }
-.chat-area {
-  padding: 20px 80px;
-  max-height: calc(100vh - 220px);
-  overflow-y: auto;
+.result::-webkit-scrollbar{
+    display: none;
+}
+.prompt-box{
+    margin: 40px 0px;
+    align-items: center;
+    display: flex;
+    gap: 20px;  
+}
+.result img{
+    width: 40px;
+    border-radius: 50%;
+
+}
+.result-box{
+    display: flex;
+    align-items: start;
+    gap: 20px;
+}
+.loader-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.loader-icon {
+  width: 32px;
+  opacity: 0.8;
+}
+
+.loader-bars {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
 }
 
-/* Base bubble style */
-.chat-bubble {
-  max-width: 70%;
-  padding: 16px 18px;
-  border-radius: 18px;
-  font-size: 16px;
-  line-height: 1.5;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+.loader-bars div {
+  height: 12px;
+  width: 240px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #4b90ff, #d9e7ff, #ffffff);
+  animation: shimmer 1.4s infinite ease-in-out;
+  opacity: 0.65;
 }
 
-/* User message on right */
-.user-bubble {
-  align-self: flex-end;
-  background: #0b57d0;
-  color: white;
-  border-bottom-right-radius: 4px;
+.loader-bars div:nth-child(2) {
+  width: 220px;
+  animation-delay: 0.2s;
 }
 
-/* AI message on left */
-.ai-bubble {
-  align-self: flex-start;
-  background: #f7f7f8;
-  color: #202124;
-  border-bottom-left-radius: 4px;
+.loader-bars div:nth-child(3) {
+  width: 260px;
+  animation-delay: 0.4s;
 }
 
-/* Optional subtle animation for "thinking" */
-.typing {
-  opacity: 0.8;
-  font-style: italic;
+@keyframes shimmer {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
 }
-
+.result-box p{
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.8;
+}
