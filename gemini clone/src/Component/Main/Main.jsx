@@ -29,13 +29,13 @@ const Main = () => {
 
       setIsLoading(false);
 
-      let i = 0;
-      const speed = 10;
+      let i = -1;
+      const speed = 5;
 
       const interval = setInterval(() => {
-        setDisplayedText((prev) => prev + response.charAt(i));
+        setDisplayedText((prev) => prev + htmlText.charAt(i));
         i++;
-        if (i >= response.length) clearInterval(interval);
+        if (i >= htmlText.length) clearInterval(interval);
       }, speed);
 
       setPrompt("");
@@ -125,7 +125,7 @@ const Main = () => {
             ) : (
               <div className="result-box">
                 <img src={assets.gemini_icon} alt="" />
-                <p>{displayedText}</p>
+                <p className="formated-text" dangerouslySetInnerHTML={{__html:displayedText}}></p>
               </div>
             )}
           </div>
