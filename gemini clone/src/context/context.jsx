@@ -8,6 +8,8 @@ export const context = createContext();
 
 
 const ContextProvider = ({ children }) => {
+  
+
 
   // This function runs when user sends a prompt
   const onSent = async (prompt) => {

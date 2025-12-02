@@ -4,8 +4,12 @@ import { assets } from "../../assets/assets";
 
 import "./Main.css";
 
-const Main = () => {
-  const [prompt, setPrompt] = useState("");
+const Main = ({ 
+  prompt, 
+  setPrompt, 
+  resPromts, 
+  setResPromts }) => {
+
   const [reply, setReply] = useState("");
   const [userPrompt, setUserPrompt] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -14,7 +18,10 @@ const Main = () => {
   const handleSend = async () => {
     if (!prompt.trim()) return;
 
+    // save prompt
     setUserPrompt(prompt);
+    setResPromts(prev => [...prev, { prompt }]);
+
     setIsLoading(true);
     setDisplayedText("");
 
@@ -23,9 +30,8 @@ const Main = () => {
       setReply(response);
 
       const htmlText = response
-      .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-      .replace(/\n/g, "<br/>");
-
+        .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+        .replace(/\n/g, "<br/>");
 
       setIsLoading(false);
 
@@ -33,7 +39,7 @@ const Main = () => {
       const speed = 5;
 
       const interval = setInterval(() => {
-        setDisplayedText((prev) => prev + htmlText.charAt(i));
+        setDisplayedText(prev => prev + htmlText.charAt(i));
         i++;
         if (i >= htmlText.length) clearInterval(interval);
       }, speed);
@@ -56,9 +62,7 @@ const Main = () => {
         {!reply && (
           <>
             <div className="greet">
-              <p>
-                <span>Hello, Dev.</span>
-              </p>
+              <p><span>Hello, Dev.</span></p>
               <p>How can I help you today?</p>
             </div>
 
@@ -102,10 +106,10 @@ const Main = () => {
             </div>
           </div>
           <p className="bottem-info">
-            Gemini may display inaccurate info, including about people, so
-            double-check its responses. Your privacy and Gemini Apps
+            Gemini may display inaccurate info…
           </p>
         </div>
+
         {reply && (
           <div className="result">
             <div className="prompt-box">
@@ -117,15 +121,16 @@ const Main = () => {
               <div className="loader-box">
                 <img src={assets.gemini_icon} alt="" className="loader-icon" />
                 <div className="loader-bars">
-                  <div></div>
-                  <div></div>
-                  <div></div>
+                  <div></div><div></div><div></div>
                 </div>
               </div>
             ) : (
               <div className="result-box">
                 <img src={assets.gemini_icon} alt="" />
-                <p className="formated-text" dangerouslySetInnerHTML={{__html:displayedText}}></p>
+                <p
+                  className="formated-text"
+                  dangerouslySetInnerHTML={{ __html: displayedText }}
+                ></p>
               </div>
             )}
           </div>
