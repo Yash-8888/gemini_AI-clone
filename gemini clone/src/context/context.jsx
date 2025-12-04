@@ -11,7 +11,7 @@ const ContextProvider = ({ children }) => {
   
 
 
-  // This function runs when user sends a prompt
+
   const onSent = async (prompt) => {
     try {
       const reply = await runChat(input);
