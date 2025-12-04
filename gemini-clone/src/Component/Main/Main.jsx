@@ -1,6 +1,6 @@
 import { runChat } from "../../config/gemini.js";
 import { useState } from "react";
-import { assets } from "../../assets/assets";
+import { assets } from "../../assets/assets.js";
 
 import "./Main.css";
 
