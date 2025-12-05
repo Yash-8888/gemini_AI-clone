@@ -28,7 +28,7 @@ app.post("/api/generate", async (req, res) => {
 });
 
 app.listen(5000, () => {
-  console.log(`✔ Server running on port ${port}`);
+  console.log(`✔ Server running on port`);
 });
 
 
