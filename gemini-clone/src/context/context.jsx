@@ -14,7 +14,7 @@ const ContextProvider = ({ children }) => {
 
   const onSent = async (prompt) => {
     try {
-      const reply = await runChat(input);
+      const reply = await runChat(prompt);
       console.log("Gemini replied:", reply);
       return reply;
     } catch (error) {

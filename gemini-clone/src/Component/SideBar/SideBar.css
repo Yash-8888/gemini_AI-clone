@@ -5,6 +5,7 @@
     flex-direction: column;
     background-color: #f0f4f9;
     padding: 25px 15px;
+    
 }
 .sidebar img{
     width: 20px;
@@ -30,6 +31,9 @@
 .sidebar .recent{
     display: flex;
     flex-direction: column;
+    animation: fadeIn 1.5s ;
+    font-weight: 300;
+    font-size: 0.9rem;
 }
 .sidebar .Recent-titel{
     margin-top: 30px;
@@ -43,7 +47,6 @@
     padding-right: 10px;
     border-radius: 50px;
     color: #282828;
-    
 }
 .sidebar .recent-entry:hover{
     background-color: #e6eaf1;
@@ -55,4 +58,10 @@
     
 }
 
+@media (max-width:600px) {
+    .sidebar{
+        display: none;
+        
+    }
+}
 

@@ -3,7 +3,8 @@
     min-height: 100vh;
     padding-bottom: 15vh;
     position: relative;
-
+    margin-left: 65px;
+    animation: fadeIn 1.5s ease-in;
 }
 .Nav{
     display: flex;
@@ -178,4 +179,29 @@
     font-weight: 300;
     line-height: 1.8;
 }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width:600px) {
+  .Main {
+    margin-left: 0;
+  }
+  .Main-bottem{
+    position: fixed;
+    width: 100%;
+  }
+  .Main-bottem input{
+    flex: none;
+    width: 70%;
+  }
+  .Main-bottem img{
+    width: 20px;
+  }
+  .search-box div{
+    gap: 5px;
+  }
+}
+
 

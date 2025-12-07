@@ -4,12 +4,7 @@ import { assets } from "../../assets/assets.js";
 
 import "./Main.css";
 
-const Main = ({ 
-  prompt, 
-  setPrompt, 
-  resPromts, 
-  setResPromts }) => {
-
+const Main = ({ prompt, setPrompt, resPromts, setResPromts }) => {
   const [reply, setReply] = useState("");
   const [userPrompt, setUserPrompt] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -20,7 +15,7 @@ const Main = ({
 
     // save prompt
     setUserPrompt(prompt);
-    setResPromts(prev => [...prev, { prompt }]);
+    setResPromts((prev) => [...prev, { prompt }]);
 
     setIsLoading(true);
     setDisplayedText("");
@@ -28,6 +23,13 @@ const Main = ({
     try {
       const response = await runChat(prompt);
       setReply(response);
+
+      if (!response) {
+        console.error("❌ Backend returned no data");
+        setReply("Something went wrong.");
+        setIsLoading(false);
+        return;
+      }
 
       const htmlText = response
         .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
@@ -39,7 +41,7 @@ const Main = ({
       const speed = 5;
 
       const interval = setInterval(() => {
-        setDisplayedText(prev => prev + htmlText.charAt(i));
+        setDisplayedText((prev) => prev + htmlText.charAt(i));
         i++;
         if (i >= htmlText.length) clearInterval(interval);
       }, speed);
@@ -62,7 +64,9 @@ const Main = ({
         {!reply && (
           <>
             <div className="greet">
-              <p><span>Hello, Dev.</span></p>
+              <p>
+                <span>Hello, Dev.</span>
+              </p>
               <p>How can I help you today?</p>
             </div>
 
@@ -105,9 +109,7 @@ const Main = ({
               <img src={assets.send_icon} onClick={handleSend} alt="" />
             </div>
           </div>
-          <p className="bottem-info">
-            Gemini may display inaccurate info…
-          </p>
+          <p className="bottem-info">Gemini may display inaccurate info…</p>
         </div>
 
         {reply && (
@@ -121,7 +123,9 @@ const Main = ({
               <div className="loader-box">
                 <img src={assets.gemini_icon} alt="" className="loader-icon" />
                 <div className="loader-bars">
-                  <div></div><div></div><div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
                 </div>
               </div>
             ) : (
