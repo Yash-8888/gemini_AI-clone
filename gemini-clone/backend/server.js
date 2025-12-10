@@ -33,5 +33,12 @@ app.post("/api/generate", async (req, res) => {
     console.error("🔥 Gemini Error:", error);
     return res.status(500).json({ error: error.message });
   }
+  
 });
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on port ${PORT}`);
+});
+
 
